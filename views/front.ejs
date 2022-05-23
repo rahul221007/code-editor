@@ -1,0 +1,116 @@
+<%- include('header.ejs') %>
+
+<!-- ..................navbar.................................. -->
+
+
+<div class="header">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">CodeEditor</a>
+     
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#" id='user'>
+        <%=user %>
+      </a>
+      </li>
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal" style="position: absolute; right: 1%; top:18%">
+       + Invite
+      </button>
+             
+
+    </ul>
+  </div>
+</nav>
+</div>
+        <!-- ...................................................... -->
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-sm modal-right">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" style="font-weight: bold;">Link</h4>
+        <button type="button"  class="close" data-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        localhost:8080/<%=roomId%>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- .............question tab + compiler tab + chats........................................ -->
+
+<div class="container-fluid" id ="smallHeader">
+<div class="row container-fluid" >
+    <div class="col-sm-3" style="background-color:rgba(0, 0, 0, 0.384); height: 100% color=white; padding-right: 3px;">
+      
+        <%- include('question.ejs') %>
+      
+    </div>
+    <div class="col-sm-6" style="background-color:rgba(0, 0, 0, 0.384)">
+    
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#compiler">Compiler</a></li>
+                <li><a data-toggle="tab" href="#whiteboard">Whiteboard</a></li>
+                <li><a data-toggle="tab" href="#screen-share">Screen-Share</a></li>
+            </ul>
+              
+                
+            
+            
+            <div class="tab-content">
+                <div id="compiler" class="tab-pane fade in active">
+                 
+                    <%- include('compiler.ejs') %>
+                
+                </div>
+                <div id="whiteboard" class="tab-pane fade">
+                
+                    <%- include('whiteboard.ejs') %>
+                
+                  
+                </div>
+                <div id="screen-share" class="tab-pane fade">
+                     <%-include('screen_share.ejs') %>
+                </div>
+                
+             </div>
+                
+          </div> 
+        
+    </div>
+    <div class="col-sm-3" >
+     
+        <%- include('video.ejs') %>
+        <%- include('chat.ejs') %>
+     
+      
+    </div>
+     <div class="col-sm-3">
+       <%- include('score.ejs') %>
+       <%- include('note.ejs') %>
+       
+     </div>
+    
+
+
+ </div>   
+</div>
+
+
+
